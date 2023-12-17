@@ -397,6 +397,67 @@ fieldset {
   border: 0;
 }
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.custom-container {
+  display: flex;
+  flex-direction: column;
+  margin: auto; 
+  max-width: 1400px;
+  padding: 0 20px; 
+  box-sizing: border-box;
+}
+
+.left,
+.right {
+  flex: 1;
+}
+
+#description{
+  display: flex;
+}
+
+/* For layout 1 */
+.flex-layout-1 {
+  flex-direction: row;
+}
+
+/* For layout 2 */
+.flex-layout-2 {
+  flex-direction: row-reverse;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .custom-container {
+    flex-direction: column;
+  }
+
+  .left,
+  .right {
+    flex: none;
+    overflow: hidden;
+  }
+
+  .flex-layout-1 .right {
+    order: -1; /* Change the order to display description above the image */
+  }
+
+  .flex-layout-2 .left {
+    order: -1; /* Change the order to display description above the image */
+  }
+
+  .flex-layout-2 .right {
+    order: -2;
+  }
+}
+
+
+
 legend {
   float: left;
   width: 100%;
