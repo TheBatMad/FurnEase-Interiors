@@ -19749,6 +19749,28 @@ iframe {
   border-bottom-color: #DF6951;
 }
 
+.main-content {
+  display: flex;
+  justify-content: space-between; /* To create space between left and right */
+  flex-wrap: wrap; /* Allow items to wrap in smaller screens */
+}
+
+.left, .right {
+  flex-basis: calc(50% - 10px); /* Adjust width and consider margin/padding */
+  margin-bottom: 20px; /* Add some margin between the divs */
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+  .left, .right {
+      flex-basis: calc(100% - 10px); /* Full width on smaller screens */
+  }
+}
+
+
+
+
 /*-----------------------------------------------
 |   User Styles
 -----------------------------------------------*/
