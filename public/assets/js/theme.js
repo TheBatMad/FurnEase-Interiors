@@ -375,3 +375,21 @@ docReady(navbarInit);
 docReady(detectorInit);
 docReady(scrollToTop);
 //# sourceMappingURL=theme.js.map
+
+document.getElementById('myForm').addEventListener('submit', (e) => {
+  e.preventDefault(); // Prevent default form submission
+
+  const formData = new FormData(e.target);
+
+  fetch('http://localhost:3000/submit-form', { // Replace with your backend URL
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.text())
+  .then(message => {
+    document.getElementById('message').innerText = message;
+  })
+  .catch(error => {
+    document.getElementById('message').innerText = 'Error occurred.';
+  });
+});
